@@ -101,3 +101,4 @@ ENV/
 .mypy_cache/
 env.dev
 env.prod
+ui/node_modules/
