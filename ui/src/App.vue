@@ -5,34 +5,54 @@
       apiKey="a49fed1a512e605d8356722bfbb84ebe"
       indexName="ICD10Code"
     >
-      <ais-search-box />
+      <center>
+        <ais-search-box />
+        <ais-stats />
+        <ais-pagination></ais-pagination>
+      </center>
+      <hr/>
       <ais-results>
         <template scope="{ result }">
-          <h2>
-            <ais-highlight :result="result" attributeName="code" >
-            </ais-highlight>:
+          <div class='search-result'>
+            <a @click.stop='codeSelected(result.code)' href='#' >
+            <ais-highlight
+              :result="result" attributeName="code" >
+            </ais-highlight>
+            </a>
             <ais-highlight :result="result" attributeName="path" >
             </ais-highlight>
-          </h2>
+            </a>
+          </div>
         </template>
       </ais-results>
     </ais-index>
+    <hr/>
+    <center><ais-powered-by></ais-powered-by></center>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    codeSelected (code) {
+      console.log(code)
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ul.ais-pagination{
+  list-style-type: none;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+ul.ais-pagination li {
+  display: inline;
+  margin:10px;
+}
+.search-result{
+  padding:10px;
+  border: solid 1px #f1f1f1;
 }
 </style>
