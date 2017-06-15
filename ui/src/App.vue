@@ -9,9 +9,9 @@
       <ais-results>
         <template scope="{ result }">
           <h2>
-            {{result.parent}} > <ais-highlight :result="result" attributeName="code" >
+            <ais-highlight :result="result" attributeName="code" >
             </ais-highlight>:
-            <ais-highlight :result="result" attributeName="title" >
+            <ais-highlight :result="result" attributeName="path" >
             </ais-highlight>
           </h2>
         </template>

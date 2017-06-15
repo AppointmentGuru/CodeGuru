@@ -5,7 +5,7 @@ from django.contrib import admin
 from .models import ICD10Code
 
 class ICD10CodeAdmin(admin.ModelAdmin):
-    list_display = ('code', 'title', 'parent')
+    list_display = ('code', 'title', 'level', 'path', 'see')
     search_fields = ('code','title')
 
 admin.site.register(ICD10Code, ICD10CodeAdmin)
