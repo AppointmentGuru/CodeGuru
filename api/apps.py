@@ -5,12 +5,12 @@ from django.apps import AppConfig
 import algoliasearch_django as algoliasearch
 from algoliasearch_django import AlgoliaIndex
 
-class ICD10CodeIndex(AlgoliaIndex):
-    fields = ('code', 'path', 'level', 'see')
+class CodeIndex(AlgoliaIndex):
+    fields = ('name', 'description')
 
 class ApiConfig(AppConfig):
     name = 'api'
 
     def ready(self):
-        ICD10Code = self.get_model('ICD10Code')
-        algoliasearch.register(ICD10Code, ICD10CodeIndex)
+        Code = self.get_model('Code')
+        # algoliasearch.register(Code, CodeIndex)

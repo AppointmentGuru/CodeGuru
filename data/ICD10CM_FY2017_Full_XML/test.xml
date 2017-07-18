@@ -1,39 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ICD10CM.index>
+<ICD10CM.tabular>
   <version>2017</version>
-  <title>ICD-10-CM INDEX TO DISEASES and INJURIES</title>
-  <letter>
-    <title>A</title>
-    <mainTerm>
-      <title>Wound, open</title>
-      <term level="1">
-        <title>abdomen, abdominal</title>
-        <term level="2">
-          <title>wall</title>
-          <code>S31.109</code>
-          <term level="3">
-            <title>with penetration into peritoneal cavity</title>
-            <code>S31.609</code>
-          </term>
-          <term level="3">
-            <title>bite</title>
-            <see>Bite, abdomen, wall</see>
-          </term>
-          <term level="3">
-            <title>epigastric region</title>
-            <code>S31.102</code>
-            <term level="4">
-              <title>with penetration into peritoneal cavity</title>
-              <code>S31.602</code>
-            </term>
-            <term level="4">
-              <title>bite</title>
-              <see>Bite, abdomen, wall, epigastric region</see>
-            </term>
-          </term>
-        </term>
-      </term>
-    </mainTerm>
-  </letter>
-  <letter><title>B</title></letter>
-</ICD10CM.index>
+  <introduction>
+  </introduction>
+
+<chapter>
+    <name>1</name>
+    <desc>Certain infectious and parasitic diseases (A00-B99)</desc>
+    <includes>
+      <note>diseases generally recognized as communicable or transmissible</note>
+    </includes>
+    <useAdditionalCode>
+      <note>code to identify resistance to antimicrobial drugs (Z16.-)</note>
+    </useAdditionalCode>
+    <excludes1>
+      <note>certain localized infections - see body system-related chapters</note>
+    </excludes1>
+    <excludes2>
+      <note>carrier or suspected carrier of infectious disease (Z22.-)</note>
+      <note>infectious and parasitic diseases complicating pregnancy, childbirth and the puerperium (O98.-)</note>
+      <note>infectious and parasitic diseases specific to the perinatal period (P35-P39)</note>
+      <note>influenza and other acute respiratory infections (J00-J22)</note>
+    </excludes2>
+    <sectionIndex>
+      <sectionRef first="A00" last="A09" id="A00-A09">
+         Intestinal infectious diseases
+      </sectionRef>
+    </sectionIndex>
+
+
+    <section id="A00-A09">
+      <desc>Intestinal infectious diseases (A00-A09)</desc>
+
+      <diag>
+        <name>A01</name>
+        <desc>Typhoid and paratyphoid fevers</desc>
+        <diag>
+          <name>A01.0</name>
+          <desc>Typhoid fever</desc>
+          <inclusionTerm>
+            <note>Infection due to Salmonella typhi</note>
+          </inclusionTerm>
+          <diag>
+            <name>A01.00</name>
+            <desc>Typhoid fever, unspecified</desc>
+          </diag>
+          <diag>
+            <name>A01.01</name>
+            <desc>Typhoid meningitis</desc>
+          </diag>
+          <diag>
+            <name>A01.02</name>
+            <desc>Typhoid fever with heart involvement</desc>
+            <inclusionTerm>
+              <note>Typhoid endocarditis</note>
+              <note>Typhoid myocarditis</note>
+            </inclusionTerm>
+          </diag>
+          <diag>
+            <name>A01.03</name>
+            <desc>Typhoid pneumonia</desc>
+          </diag>
+        </diag>
+      </diag>
+      <diag>
+      </diag>
+    </section>
+    <section></section>
+  </chapter>
+  <chapter>
+  </chapter>
+</ICD10CM.tabular>
