@@ -102,3 +102,4 @@ ENV/
 env.dev
 env.prod
 ui/node_modules/
+static/

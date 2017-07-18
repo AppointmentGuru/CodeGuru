@@ -13,4 +13,4 @@ class ApiConfig(AppConfig):
 
     def ready(self):
         Code = self.get_model('Code')
-        # algoliasearch.register(Code, CodeIndex)
+        algoliasearch.register(Code, CodeIndex)

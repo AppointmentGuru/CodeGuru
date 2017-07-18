@@ -12,5 +12,4 @@ class CodeAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'includes', 'excludes1', 'excludes2', 'inclusion_term', 'use_additional_code',)
     search_fields = ('name',)
 
-admin.site.register(ICD10Code, ICD10CodeAdmin)
 admin.site.register(Code, CodeAdmin)

@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     #3rd party:
-    'algoliasearch_django',
     'rest_framework',
     #custom:
     'api',
@@ -124,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/code/static/'
 
 DATABASES = {
     'default': {
@@ -143,7 +144,9 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 100
 }
 
-ALGOLIA = {
-    'APPLICATION_ID': os.environ.get('ALGOLIA_APPLICATION_ID'),
-    'API_KEY': os.environ.get('ALGOLIA_API_KEY')
-}
+if os.environ.get('ALGOLIA_APPLICATION_ID', None) is not None:
+    INSTALLED_APPS.append('algoliasearch_django')
+    ALGOLIA = {
+        'APPLICATION_ID': os.environ.get('ALGOLIA_APPLICATION_ID', None),
+        'API_KEY': os.environ.get('ALGOLIA_API_KEY', None)
+    }
