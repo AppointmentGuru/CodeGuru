@@ -8,3 +8,6 @@ django-filter
 
 ipdb
 ipython
+
+coverage
+codacy-coverage
