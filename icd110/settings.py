@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #3rd party:
+    'kong_oauth',
+    'storages',
     'rest_framework',
+    'django_filters',
     #custom:
     'api',
 ]

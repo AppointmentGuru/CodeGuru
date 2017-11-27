@@ -14,7 +14,11 @@ services:
     volumes:
       - .:/code
     ports:
-      - "8000:8000"
+      - "8000:80"
+    env_file:
+      - env.dev
+    environment:
+      - ALLOWED_HOSTS=localhost
 
 volumes:
   icd10-postgres-db-volume:

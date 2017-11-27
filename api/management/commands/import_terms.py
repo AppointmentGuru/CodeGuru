@@ -1,3 +1,6 @@
+'''
+deprecated. Use import.py
+'''
 import xmltodict
 from django.core.management.base import BaseCommand
 from api.models import ICD10Code

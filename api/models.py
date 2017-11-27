@@ -19,8 +19,8 @@ class Section(models.Model):
 class Code(models.Model):
     section = models.ForeignKey('Section', blank=True, null=True)
     parent = models.ForeignKey('Code', blank=True, null=True)
-    name = models.CharField(max_length=250, blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
+    name = models.CharField(max_length=250, blank=True, null=True, db_index=True)
+    description = models.TextField(blank=True, null=True, db_index=True)
     includes = ArrayField(models.TextField(), blank=True, null=True, help_text='The word \'Includes\' appears immediately under certain categories to further define, or give examples of, the content of the category.')
     excludes1 = ArrayField(models.TextField(), blank=True, null=True, help_text='A type 1 Excludes note is a pure excludes.  It means \'NOT CODED HERE!\'  An Excludes1 note indicates that the code excluded should never be used at the same time as the code above the Excludes1 note.  An Excludes1 is used when two conditions cannot occur together, such as a congenital form versus an acquired form of the same condition.')
     excludes2 = ArrayField(models.TextField(), blank=True, null=True, help_text='A type 2 excludes note represents \'Not included here\'.  An excludes2 note indicates that the condition excluded is not part of the condition it is excluded from but a patient may have both conditions at the same time.  When an Excludes2 note appears under a code it is acceptable to use both the code and the excluded code together.')
