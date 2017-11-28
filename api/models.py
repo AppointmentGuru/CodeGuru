@@ -27,7 +27,14 @@ class Code(models.Model):
     inclusion_term = ArrayField(models.TextField(), blank=True, null=True, help_text='Certain conditions have both an underlying etiology and multiple body system manifestations due to the underlying etiology.  For such conditions the ICD-10-CM has a coding convention that requires the underlying condition be sequenced first followed by the manifestation.  Wherever such a combination exists there is a \'use additional code\' note at the etiology code, and a \'code first\' note at the manifestation code.  These instructional notes indicate the proper sequencing order of the codes, etiology followed by manifestation. In most cases the manifestation codes will have in the code title, \'in diseases classified elsewhere.\'  Codes with this title are a component of the etiology/ manifestation convention. The code title indicates that it is a manifestation code.  \'In diseases classified elsewhere\' codes are never permitted to be used as first listed or principal diagnosis codes. They must be used in conjunction with an underlying condition code and they must be listed following the underlying condition.')
     use_additional_code = ArrayField(models.TextField(), blank=True, null=True, help_text='A code also note instructs that 2 codes may be required to fully describe a condition but the sequencing of the two codes is discretionary, depending on the severity of the conditions and the reason for the encounter.')
 
+class ProcessCode(models.Model):
+    name = models.CharField(max_length=7, blank=True, null=True, db_index=True)
+    practice_type_code = models.CharField(max_length=5, blank=True, null=True, db_index=True)
+    description = models.TextField(blank=True, null=True, db_index=True)
+    discovery_rate = models.DecimalField(decimal_places=2, max_digits=10, default=0, db_index=True)
+
 class ICD10Code(models.Model):
+    '''Deprecated .. use above ^^ '''
 
     def __str__(self):
         return '{}: {}'.format(self.code, self.title)

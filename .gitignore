@@ -103,3 +103,4 @@ env.dev
 env.prod
 ui/node_modules/
 static/
+.DS_Store
