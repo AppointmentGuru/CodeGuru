@@ -1,5 +1,5 @@
 """
-WSGI config for icd110 project.
+WSGI config for codeguru project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
