@@ -13,7 +13,6 @@ class Command(BaseCommand):
             'dh_rate_dieticians.csv',
             'dh_rate_psychology.csv',
             'dh_rate_chiropractor2.csv',
-            'dh_rate_dieticians2.csv',
             'dh_rate_speech_therapy_and_audiology.csv',
             #'dh_rate_consult_code.csv',
             'dh_rate_occupational_therapy.csv',
@@ -21,8 +20,9 @@ class Command(BaseCommand):
             'dh_rate_podiatry.csv',
         ]
         for file in files:
-            with open('data/process/dh_rate_dieticians.csv') as csvfile:
+            with open('data/process/{}'.format(file)) as csvfile:
                 reader = csv.reader(csvfile)
+                count = 0
                 for row in reader:
                     code = ProcessCode()
                     code.practice_type_code = row[0]
@@ -31,6 +31,8 @@ class Command(BaseCommand):
                     if row[3] not in ['Blank']:
                         code.discovery_rate = row[3]
                     code.save()
+                    count = count + 1
+                print("- {}: {} records".format(file, count))
 
-                print ('Imported: {} codes'.format(ProcessCode.objects.count()))
+            print ('Imported: {} codes'.format(ProcessCode.objects.count()))
 
